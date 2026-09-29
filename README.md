@@ -1,4 +1,4 @@
-# SauceDemo E2E Automation - Cypress
+# Desafio SauceDemo - Cypress
 
 Projeto de automação de testes E2E para a aplicação de demonstração **SauceDemo (Swag Labs)**, desenvolvido em JavaScript com o framawork Cypress.
 
