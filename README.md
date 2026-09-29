@@ -140,6 +140,8 @@ desafio_saudemo_cypress/
 ├── cypress.config.js
 ├── package-lock.json
 └── package.json
+└── README.md
+└── cypress.config.js
 ```
 
 ---
