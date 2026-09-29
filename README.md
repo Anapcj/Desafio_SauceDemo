@@ -1,10 +1,10 @@
 # SauceDemo E2E Automation - Cypress
 
-Projeto de automação de testes E2E para a aplicação de demonstração **SauceDemo (Swag Labs)**, desenvolvido em JavaScript com Cypress.
+Projeto de automação de testes E2E para a aplicação de demonstração **SauceDemo (Swag Labs)**, desenvolvido em JavaScript com o framawork Cypress.
 
-## Objetivo
+## Objetivo:
 
-Automatizar os cenários obrigatórios propostos no desafio:
+Automatizar os cenários propostos no desafio:
 
 1. Login com sucesso.
 2. Login inválido com `locked_out_user`.
@@ -20,8 +20,7 @@ Automatizar os cenários obrigatórios propostos no desafio:
 Aplicação: https://www.saucedemo.com/
 
 ---
-
-## Tecnologias
+## Tecnologias:
 
 - JavaScript
 - Cypress 16.1.0
@@ -31,11 +30,10 @@ Aplicação: https://www.saucedemo.com/
 - Cypress Custom Commands
 - Fixtures para dados de teste
 
-A versão `16.1.0` foi definida no `package.json` para manter o projeto reprodutível.
+A versão `16.1.0` foi definida no `package.json` para permitir que o projeto seja reprodutível.
 
 ---
-
-## Pré-requisitos
+## Pré-requisitos:
 
 Recomenda-se utilizar uma versão atual suportada do Node.js e npm.
 
@@ -50,8 +48,7 @@ A documentação oficial do Cypress informa os requisitos de sistema e versões 
 https://docs.cypress.io/app/get-started/install-cypress
 
 ---
-
-## Instalação
+## Instalação:
 
 Clone o repositório e acesse a pasta do projeto:
 
@@ -73,8 +70,7 @@ npx cypress install
 ```
 
 ---
-
-## Execução dos testes
+## Execução dos testes:
 
 ### Interface gráfica
 
@@ -121,16 +117,15 @@ npx cypress run --spec "cypress/e2e/login.cy.js"
 ```
 
 ---
-
-## Estrutura do projeto
+## Estrutura do projeto:
 
 ```text
 desafio_saudemo_cypress/
 ├── cypress/
 │   ├── e2e/
-│   │   ├── catalog.cy.js
+│   │   ├── ordenacao_produtos.cy.js
 │   │   ├── login.cy.js
-│   │   └── purchase.cy.js
+│   │   └── fluxo_compras.cy.js
 │   ├── fixtures/
 │   │   └── users.json
 │   ├── pages/
@@ -143,18 +138,16 @@ desafio_saudemo_cypress/
 │       └── e2e.js
 ├── .gitignore
 ├── cypress.config.js
-├── package.json
-├── PROMPTS.md
-└── README.md
+├── package-lock.json
+└── package.json
 ```
 
 ---
-
-## Arquitetura escolhida
+## Arquitetura escolhida:
 
 ### Page Object Model
 
-O projeto utiliza **Page Object Model (POM)** para separar a lógica de interação com a aplicação dos cenários de negócio.
+O projeto utiliza **Page Object Model (POM)** para separar a lógica da aplicação dos cenários de negócio.
 
 Cada página possui uma classe responsável por:
 
@@ -200,10 +193,10 @@ A automação prioriza atributos `data-test` disponibilizados pela aplicação, 
 
 | ID | Cenário | Arquivo |
 |---|---|---|
-| CT-01 | Login com credenciais válidas | `login.cy.js` |
-| CT-02 | Login com `locked_out_user` | `login.cy.js` |
-| CT-03 | Compra completa com dois produtos | `purchase.cy.js` |
-| CT-04 | Ordenação Low to High | `catalog.cy.js` |
+| CT-01 | Login com credenciais válidas (sucesso) | `login.cy.js` |
+| CT-02 | Login inválido `locked_out_user` | `login.cy.js` |
+| CT-03 | Compra completa com dois produtos (fluxo_compras) | `purchase.cy.js` |
+| CT-04 | Ordenação Low to High (ordenacao) | `catalog.cy.js` |
 
 ---
 
@@ -215,7 +208,7 @@ Após selecionar a opção:
 Price (low to high)
 ```
 
-o teste coleta os preços exibidos na página, converte os valores para números e compara a sequência apresentada com uma cópia ordenada numericamente.
+o teste coleta os preços exibidos na página, converte os valores para números e compara a sequência apresentada.
 
 Exemplo conceitual:
 
@@ -237,7 +230,6 @@ Assim, o teste não depende de uma lista fixa de preços e valida o comportament
 - Seletores orientados a `data-test`.
 - Asserções explícitas nos pontos relevantes do fluxo.
 - Nomes de testes orientados ao comportamento esperado.
-- Evitar `cy.wait()` com tempos fixos.
 - Evitar seletores excessivamente dependentes de CSS visual.
 - Conversão de preços para números antes da comparação.
 - Configuração centralizada no `cypress.config.js`.
@@ -246,31 +238,24 @@ Assim, o teste não depende de uma lista fixa de preços e valida o comportament
 
 ---
 
-## Inteligência Artificial
+## Inteligência Artificial:
 
 A Inteligência Artificial foi utilizada como apoio ao desenvolvimento para:
 
-- estruturar a arquitetura inicial;
+- auxiliar na estruturação da arquitetura inicial;
 - revisar boas práticas de Cypress;
-- sugerir organização em Page Objects;
-- apoiar a criação dos cenários E2E;
-- revisar seletores e asserções;
-- elaborar documentação;
+- sugerir/revisar organização em Page Objects;
+- apoiar na criação da base dos cenários E2E;
+- auxiliar na revisão de seletores e asserções;
+- auxiliar na elaboração e refinamento da documentação;
 - revisar a estratégia de validação da ordenação.
 
-O histórico dos principais prompts utilizados está disponível em:
-
-```text
-PROMPTS.md
-```
-
-O arquivo documenta os objetivos dos prompts e as decisões resultantes, sem expor raciocínio interno ou conteúdo privado do modelo.
+O histórico dos principais prompts está disponível na sessão descrita abaixo deste documento.
 
 ---
+## Evoluções:
 
-## Possíveis evoluções
-
-Caso o projeto fosse ampliado para um contexto produtivo, poderiam ser adicionados:
+Caso o projeto fosse ampliado, poderiam ser adicionados:
 
 - pipeline CI/CD;
 - execução paralela;
@@ -285,8 +270,7 @@ Caso o projeto fosse ampliado para um contexto produtivo, poderiam ser adicionad
 - integração com gestão de defeitos.
 
 ---
-
-## Referências
+## Referências:
 
 Cypress - instalação:
 https://docs.cypress.io/app/get-started/install-cypress
@@ -294,39 +278,246 @@ https://docs.cypress.io/app/get-started/install-cypress
 Cypress - configuração:
 https://docs.cypress.io/app/references/configuration
 
-Cypress - execução via CLI:
-https://docs.cypress.io/app/references/command-line
-
-Cypress - variáveis de ambiente:
-https://docs.cypress.io/app/guides/environment-variables
-
 SauceDemo:
 https://www.saucedemo.com/
 
 ---
-## Observação
-
-Este projeto foi estruturado especificamente para o desafio proposto. Antes da entrega, recomenda-se executar a suíte localmente com:
-
-```bash
-npm install
-npm run cy:run
-```
-
-e confirmar que todos os cenários estão verdes no ambiente disponível.
 
 <details>
-
-
-  ### Este é o conteúdo oculto!
-  Você pode colocar qualquer coisa aqui dentro:
-  - Listas de passos;
-  - Explicações longas;
-  - Ou até blocos de código com as três crases:
+  <summary><b>Histórico de Prompts</b></summary>
   
-  ```javascript
-  cy.get('[data-test="username"]').type('standard_user')
-  ```
+  ### Histórico de Prompts - Desafio SauceDemo 
+
+Este sessão registra o histórico principais prompts utilizados durante a construção do projeto.
+
+---
+
+## Prompt 01 - Estrutura inicial do projeto:
+
+**Objetivo:** criar a base do projeto Cypress.
+
+**Prompt:**
+
+```text
+Crie a base de um projeto de automação de testes E2E utilizando JavaScript e o framework Cypress para a aplicação SauceDemo (Swag Labs), considerando boas práticas de arquitetura, manutenção e reutilização de código.
+```
+
+**O resultado foi a criação de um arquivo com a estrutura base do projeto:**
+
+---
+## Prompt 02 - Arquitetura Page Object Model:
+
+**Objetivo:** evitar duplicação e separar regras de negócio dos detalhes de interface.
+
+**Prompt:**
+
+```text
+Estruture os testes Cypress utilizando Page Object Model. Crie Page Objects separados para Login, Inventory, Cart e Checkout, centralizando seletores e ações de cada página. Os specs devem permanecer simples e claros.
+```
+
+**O resultado foi a criação dos seguintes arquivos:**
+
+- `LoginPage.js`
+- `InventoryPage.js`
+- `CartPage.js`
+- `CheckoutPage.js`
+
+---
+
+## Prompt 03 - Cenários propostos: 
+
+**Objetivo:** implementar os cenários solicitados no desafio.
+
+**Prompt:**
+
+```text
+Criar a estrutura base dos seguintes cenários E2E no SauceDemo:
+1. login com usuário válido (sucesso);
+2. login inválido com locked_out_user;
+3. fluxo completo de compra com pelo menos dois produtos, validação do carrinho, checkout e mensagem de sucesso;
+4. ordenação do catálogo por preço Low to High.
+Utilize boas práticas de Cypress e asserções claras.
+```
+
+**O resultado foi a criação da base dos cenários propostos:**
+
+---
+
+## Prompt 04 - Reutilização do login:
+
+**Objetivo:** reduzir repetição de código.
+
+**Prompt:**
+
+```text
+Crie um Cypress Custom Command para realizar o login padrão no SauceDemo. O comando deve aceitar usuário e senha opcionais e permitir reutilização pelos diferentes specs.
+```
+
+**O resultado foi a criação do arquivo:**
+
+- `cypress/support/commands.js`
+
+---
+
+## Prompt 05 - Dados de teste:
+
+**Objetivo:** separar credenciais da implementação dos testes.
+
+**Prompt:**
+
+```text
+Separe os usuários de teste do código dos specs utilizando Cypress fixtures. Crie dados para standard_user e locked_out_user.
+```
+
+**O resultado foi a criação do arquivo solicitado:**
+
+---
+## Prompt 06 - Validar ordenação:
+
+**Objetivo:** garantir que o teste valide o comportamento e não apenas uma sequência fixa.
+
+**Prompt:**
+
+```text
+Para o teste de ordenação, obtenha todos os preços exibidos no catálogo, converta os valores para números e compare a sequência atual com uma cópia ordenada numericamente. Evite hard-code da sequência esperada.
+```
+
+**O resultado foi a criação dos seguintes documentos:**
+
+- método `getProductPrices()` em `InventoryPage.js`;
+- comparação da lista real com a lista ordenada em `catalog.cy.js`.
+
+---
+
+## Prompt 07 - Boas práticas:
+
+**Objetivo:** revisar a qualidade técnica da solução.
+
+**Prompt:**
+
+```text
+Revise o projeto Cypress E2E para identificar práticas que aumentem manutenção, legibilidade e estabilidade. Considere Page Object Model, seletores data-test, reutilização de comandos, fixtures, asserções e configuração centralizada.
+```
+
+**Resultado utilizado:**
+
+- priorização de seletores;
+- centralização de configuração;
+- separação Page Object / spec;
+- reutilização via Custom Command.
+
+---
+## Prompt 08 - Documentação:
+
+**Objetivo:** auxiliar na elaboração da documentação adequada para entrega em GitHub.
+
+**Prompt:**
+
+```text
+Criar um documento base README.md para um projeto Cypress E2E contendo objetivo, pré-requisitos, instalação, comandos para execução headless e com interface gráfica, arquitetura escolhida, estrutura de pastas, cenários automatizados, boas práticas, uso de IA e referências.
+```
+
+**O resultado foi a criação do documento base e a revisão do mesmo:**
+
+---
+## Prompt 09 - Revisão final:
+
+**Objetivo:** conferir se os artefatos atendem aos requisitos.
+
+**Prompt:**
+
+```text
+Fazer uma revisão final de um desafio técnico de automação E2E com Cypress para SauceDemo. Verifique se os quatro cenários propostos estão cobertos, se existe README.md detalhado, se existe histórico de prompts, se a arquitetura é clara e se os comandos de instalação e execução estão documentados.
+```
+
+**O resultado foi:**
+
+- checklist dos requisitos;
+- ajustes de documentação;
+- confirmação da presença dos artefatos obrigatórios.
+
+---
+
+## Uso responsável de IA
+
+A IA foi utilizada como ferramenta de apoio no desenvolvimento. 
 </details>
+
+<details>
+  <summary><b>Test Cases</b></summary>
+  
+  ### Test Cases
+
+## CT-01 - Login com sucesso
+
+**Pré-condição:** aplicação disponível.
+
+**Dados:**
+- Usuário: `standard_user`
+- Senha: `secret_sauce`
+
+**Passos:**
+1. Acessar a aplicação.
+2. Informar usuário válido.
+3. Informar senha válida.
+4. Clicar em Login.
+
+**Resultado esperado:** usuário é direcionado ao catálogo e a página apresenta o título `Products`.
+
+---
+
+## CT-02 - Login inválido com usuário bloqueado
+
+**Dados:**
+- Usuário: `locked_out_user`
+- Senha: `secret_sauce`
+
+**Passos:**
+1. Acessar a aplicação.
+2. Informar usuário bloqueado.
+3. Informar senha.
+4. Clicar em Login.
+
+**Resultado esperado:** aplicação apresenta a mensagem:
+
+`Epic sadface: Sorry, this user has been locked out.`
+
+---
+
+## CT-03 - Compra completa (fluxo_compra)
+
+**Dados:**
+- `Sauce Labs Backpack`
+- `Sauce Labs Bike Light`
+
+**Passos:**
+1. Fazer login.
+2. Adicionar os dois produtos.
+3. Acessar o carrinho.
+4. Validar os produtos.
+5. Iniciar checkout.
+6. Preencher nome, sobrenome e CEP.
+7. Continuar.
+8. Finalizar pedido.
+
+**Resultado esperado:** aplicação apresenta:
+
+`Thank you for your order!`
+
+---
+
+## CT-04 - Ordenação por preço
+
+**Passos:**
+1. Fazer login.
+2. Acessar o catálogo.
+3. Selecionar `Price (low to high)`.
+4. Coletar os preços exibidos.
+5. Comparar a sequência apresentada com a sequência ordenada numericamente.
+
+**Resultado esperado:** preços apresentados em ordem crescente.
+
+</details>
+
 
 
