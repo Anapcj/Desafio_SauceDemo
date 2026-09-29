@@ -1,0 +1,17 @@
+{
+  "name": "desafio_saudemo_cypress",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Automação E2E da aplicação SauceDemo com Cypress",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "cypress run",
+    "test:headed": "cypress run --headed",
+    "test:chrome": "cypress run --browser chrome",
+    "test:spec": "cypress run --spec \"cypress/e2e/**/*.cy.js\""
+  },
+  "devDependencies": {
+    "cypress": "16.1.0"
+  }
+}
