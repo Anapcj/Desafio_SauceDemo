@@ -8,7 +8,7 @@ Automatizar os cenários propostos no desafio:
 
 1. Login com sucesso.
 2. Login inválido com `locked_out_user`.
-3. Fluxo completo de compra E2E:
+3. Fluxo completo de compra:
    - login;
    - inclusão de dois produtos;
    - validação dos produtos no carrinho;
@@ -189,7 +189,7 @@ A automação prioriza atributos `data-test` disponibilizados pela aplicação, 
 
 ---
 
-## Cenários automatizados
+## Cenários automatizados:
 
 | ID | Cenário | Arquivo |
 |---|---|---|
@@ -199,8 +199,7 @@ A automação prioriza atributos `data-test` disponibilizados pela aplicação, 
 | CT-04 | Ordenação Low to High (ordenacao) | `catalog.cy.js` |
 
 ---
-
-## Estratégia de validação da ordenação
+## Estratégia de validação da ordenação:
 
 Após selecionar a opção:
 
@@ -221,8 +220,7 @@ expect(prices).to.deep.equal(sortedPrices);
 Assim, o teste não depende de uma lista fixa de preços e valida o comportamento de ordenação propriamente dito.
 
 ---
-
-## Boas práticas utilizadas
+## Boas práticas utilizadas:
 
 - Separação entre teste e implementação da página.
 - Reutilização de fluxos através de Custom Commands.
@@ -237,7 +235,6 @@ Assim, o teste não depende de uma lista fixa de preços e valida o comportament
 - Scripts npm para facilitar execução local e CI.
 
 ---
-
 ## Inteligência Artificial:
 
 A Inteligência Artificial foi utilizada como apoio ao desenvolvimento para:
@@ -250,7 +247,7 @@ A Inteligência Artificial foi utilizada como apoio ao desenvolvimento para:
 - auxiliar na elaboração e refinamento da documentação;
 - revisar a estratégia de validação da ordenação.
 
-O histórico dos principais prompts está disponível na sessão descrita abaixo deste documento.
+O histórico dos principais prompts está disponível na sessão descrita abaixo deste documento (Histórico Prompts).
 
 ---
 ## Evoluções:
@@ -288,10 +285,9 @@ https://www.saucedemo.com/
   
   ### Histórico de Prompts - Desafio SauceDemo 
 
-Este sessão registra o histórico principais prompts utilizados durante a construção do projeto.
+Este sessão registra o histórico dos principais prompts utilizados durante a construção do projeto.
 
 ---
-
 ## Prompt 01 - Estrutura inicial do projeto:
 
 **Objetivo:** criar a base do projeto Cypress.
@@ -323,7 +319,6 @@ Estruture os testes Cypress utilizando Page Object Model. Crie Page Objects sepa
 - `CheckoutPage.js`
 
 ---
-
 ## Prompt 03 - Cenários propostos: 
 
 **Objetivo:** implementar os cenários solicitados no desafio.
@@ -342,7 +337,6 @@ Utilize boas práticas de Cypress e asserções claras.
 **O resultado foi a criação da base dos cenários propostos:**
 
 ---
-
 ## Prompt 04 - Reutilização do login:
 
 **Objetivo:** reduzir repetição de código.
@@ -358,7 +352,6 @@ Crie um Cypress Custom Command para realizar o login padrão no SauceDemo. O com
 - `cypress/support/commands.js`
 
 ---
-
 ## Prompt 05 - Dados de teste:
 
 **Objetivo:** separar credenciais da implementação dos testes.
@@ -388,7 +381,6 @@ Para o teste de ordenação, obtenha todos os preços exibidos no catálogo, con
 - comparação da lista real com a lista ordenada em `catalog.cy.js`.
 
 ---
-
 ## Prompt 07 - Boas práticas:
 
 **Objetivo:** revisar a qualidade técnica da solução.
@@ -437,7 +429,6 @@ Fazer uma revisão final de um desafio técnico de automação E2E com Cypress p
 - confirmação da presença dos artefatos obrigatórios.
 
 ---
-
 ## Uso responsável de IA
 
 A IA foi utilizada como ferramenta de apoio no desenvolvimento. 
@@ -465,7 +456,6 @@ A IA foi utilizada como ferramenta de apoio no desenvolvimento.
 **Resultado esperado:** usuário é direcionado ao catálogo e a página apresenta o título `Products`.
 
 ---
-
 ## CT-02 - Login inválido com usuário bloqueado
 
 **Dados:**
@@ -483,7 +473,6 @@ A IA foi utilizada como ferramenta de apoio no desenvolvimento.
 `Epic sadface: Sorry, this user has been locked out.`
 
 ---
-
 ## CT-03 - Compra completa (fluxo_compra)
 
 **Dados:**
@@ -505,7 +494,6 @@ A IA foi utilizada como ferramenta de apoio no desenvolvimento.
 `Thank you for your order!`
 
 ---
-
 ## CT-04 - Ordenação por preço
 
 **Passos:**
