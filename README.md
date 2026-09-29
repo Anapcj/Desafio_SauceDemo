@@ -314,3 +314,17 @@ npm run cy:run
 ```
 
 e confirmar que todos os cenários estão verdes no ambiente disponível.
+
+<details>
+  <details>teste</<details>
+
+  ### Este é o conteúdo oculto!
+  Você pode colocar qualquer coisa aqui dentro:
+  - Listas de passos;
+  - Explicações longas;
+  - Ou até blocos de código com as três crases:
+  
+  ```javascript
+  cy.get('[data-test="username"]').type('standard_user')
+  ```
+</details>
