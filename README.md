@@ -316,7 +316,7 @@ npm run cy:run
 e confirmar que todos os cenários estão verdes no ambiente disponível.
 
 <details>
-  <details>teste</<details>
+
 
   ### Este é o conteúdo oculto!
   Você pode colocar qualquer coisa aqui dentro:
@@ -328,3 +328,5 @@ e confirmar que todos os cenários estão verdes no ambiente disponível.
   cy.get('[data-test="username"]').type('standard_user')
   ```
 </details>
+
+
